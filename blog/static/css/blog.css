@@ -1,6 +1,6 @@
 h1 a, h2 a {
     color: #0c599c;
-    font-family: 'Anton', bold;
+    font-family: 'Lobster';
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Anton', cursive;
+    font-family: 'Lobster', cursive;
 }
 
 .date {
