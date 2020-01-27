@@ -22,10 +22,8 @@
                 <div class="col-md-8">
                 	{% load staticfiles %}
 
-                	{% for img in post %}
-					<img src="{{ img.image.url }}" >
-					
-					{% endfor %}
+
+					<img src="{% static 'photos/sh.jpg' %}">
 
                     {% block content %}
                     {% endblock %}
