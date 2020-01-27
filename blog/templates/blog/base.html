@@ -21,7 +21,12 @@
             <div class="row">
                 <div class="col-md-8">
                 	{% load staticfiles %}
-                	<img src="{% static 'photos/sh.jpg' %}" alt="My image"/>
+
+                	{% for img in post %}
+					<img src="{{ img.image.url }}" >
+					
+					{% endfor %}
+
                     {% block content %}
                     {% endblock %}
                 </div>
