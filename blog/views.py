@@ -6,6 +6,18 @@ from .forms import PostForm
 from django.shortcuts import redirect
 
 
+from django.views.generic import ListView
+from .models import Post
+
+from django.shortcuts import render_to_response
+
+
+class HomePageView(ListView):
+    #Post.objects.all().order_by('published_date')
+    model = Post
+    template_name = 'home.html'
+    ordering = ['-published_date']
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     Post.objects.all()
