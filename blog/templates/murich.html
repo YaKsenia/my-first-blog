@@ -1,0 +1,40 @@
+{% load static %}
+<html>
+    <head>
+        <title> С др мурыч !!!</title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+
+<body>
+
+    <div class="page-header"> <h1><a href="/">   </a></h1> </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+              <h1><a href=""><b>Дорогой мурыч!!! </b></a></h1>
+              {% if user.is_staff %}
+
+                  {% for post in object_list %}
+                     <div class="post">
+                        <h2><a href="">{{ post.title }}</a></h2>
+                        <h3>{{ post.text|linebreaksbr }}</h3>
+                       <!--{% load static %} -->
+                        <!--<img src="{% static "photos/sh.jpg" %}" alt="My image"> -->
+                        <img src="{{post.image.url}}" />
+
+
+                     </div>
+                  {% endfor %}
+
+              {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

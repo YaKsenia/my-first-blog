@@ -5,9 +5,12 @@ from . import views
 # posts/urls.py
 
 from .views import HomePageView
+from .views import MurichPageView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
+    path('murich', MurichPageView.as_view(), name='murich'),
+    path('admin/blog/murich', MurichPageView.as_view(), name='admin/blog/murich'),
 ]
 
 
