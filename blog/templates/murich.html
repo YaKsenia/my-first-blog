@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-
+{% if user.is_staff %}
 
     <head>
         <title> С др мурыч!!!</title>
@@ -39,31 +39,34 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-              <h1><b>Дорогой мурыч!!! Поздравляю с очередным 21-летием!</b></h1>
-              <h1>                                   (не 18, чтоб продавали водяру)</h1>
-              <br/>
-              <br/>
 
 
-                  {% for post in object_list %}
-                     <div class="post">
-                        <h2><b>{{ post.title }}</b></h2>
-                        <h3>{{ post.text|linebreaksbr }}</h3>
-                       <!--{% load static %} -->
-                        <!--<img src="{% static "photos/sh.jpg" %}" alt="My image"> -->
-                        <img src="{{post.image.url}}" />
-                        {% if post.video_file %}
-                            <audio controls>
-                                <source src="{{ post.video_file.url }}" type="audio/mp3">
-                            </audio>
-                        {% else %}
-                          <p>   </p>
 
-                        {% endif %}
+                  <h1><b>Дорогой мурыч!!! Поздравляю с очередным 21-летием!</b></h1>
+                  <h1>                                   (не 18, чтоб продавали водяру)</h1>
+                  <br/>
+                  <br/>
 
 
-                     </div>
-                  {% endfor %}
+                      {% for post in object_list %}
+                         <div class="post">
+                            <h2><b>{{ post.title }}</b></h2>
+                            <h3>{{ post.text|linebreaksbr }}</h3>
+                           <!--{% load static %} -->
+                            <!--<img src="{% static "photos/sh.jpg" %}" alt="My image"> -->
+                            <img src="{{post.image.url}}" />
+                            {% if post.video_file %}
+                                <audio controls>
+                                    <source src="{{ post.video_file.url }}" type="audio/mp3">
+                                </audio>
+                            {% else %}
+                              <p>   </p>
+
+                            {% endif %}
+
+
+                         </div>
+                      {% endfor %}
 
 
 
@@ -72,4 +75,5 @@
     </div>
 
 </body>
+{% endif %}
 </html>

@@ -1,9 +1,27 @@
 {% extends 'blog/base.html' %}
 
+{% load wysiwyg %}
+
 {% block content %}
-    <h2>New post</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
+    <h2>Edit post</h2>
+    {% wysiwyg_setup %}
+    <form method="POST" class="post-form" enctype='multipart/form-data'>
+        <form method='POST' action='{{ action_url }}' enctype='multipart/form-data'>
+        {% csrf_token %}
+
         {{ form.as_p }}
+        <input type="file" name="images" multiple>
+
         <button type="submit" class="save btn btn-default">Save</button>
+
+
+
+
     </form>
+
+
+
+
 {% endblock %}
+
+

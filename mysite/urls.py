@@ -23,6 +23,7 @@ admin.autodiscover()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    #path('post/<int:pk>/', views.post_detail, name='post_detail'),
 
 ]
 

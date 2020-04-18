@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Happy birthday pidrila! </title>
+        <title>Huck you</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -9,21 +9,12 @@
     </head>
     <body>
         <div class="page-header">
-           {% if user.is_authenticated %}
-           <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-           {% endif %}
-
-<h1>Happy birthday, шмонька!</h1>
-
+            <h1><a href="/"><b>Huck you<b></a></h1>
         </div>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                	{% load staticfiles %}
-
-
-					<img src="{% static 'photos/sh.jpg' %}">
-
                     {% block content %}
                     {% endblock %}
                 </div>
