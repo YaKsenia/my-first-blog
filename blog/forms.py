@@ -13,13 +13,23 @@ class PostForm(forms.ModelForm):
 from django import forms
 from .models import HuckYou, Images
 
+from ckeditor.fields import RichTextFormField
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+
 class PostForm(forms.ModelForm):
     title = forms.CharField(max_length=128)
-    body = forms.CharField(max_length=20000, label="Article text")
+    #body = forms.CharField(max_length=20000, label="Article text")
 
     class Meta:
         model = HuckYou
-        fields = ('title', 'text', )
+#        fields = ('article', 'title', 'text', )
+        fields = ('article', )
+        widgets = {
+             'article': RichTextFormField(),
+             'file': CKEditorUploadingWidget(),
+             }
 
 
 class ImageForm(forms.ModelForm):
