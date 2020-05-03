@@ -11,7 +11,7 @@ body
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    margin-left: 140px;
+    margin-left: 40px;
     color: #FFFFF0;
     font-size: 36pt;
     text-decoration: none;
@@ -20,9 +20,10 @@ body
 
 .content {
 
-    margin-left: 240px;
+    margin-left: 40px;
     color: #FFFFF0;
-    width: 2000px;
+    width: 2300px;
+    font-size: 14pt;
 
 }
 
@@ -52,9 +53,16 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
-    color: ##FFFFF0;
+    color: #FFFFF0;
 }
 
 .post h2 a, .post h2 a:visited {
-    color: ##FFFFF0;
+    color: #FFFFF0;
 }
+
+
+.link { color: #FFFFF0; }
+
+.link:hover { color: #00FF00; } /* CSS link hover (green) */
+
+.a { color: #FFFFF0; }
