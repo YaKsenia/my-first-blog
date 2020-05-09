@@ -1,16 +1,43 @@
+
+ /* эта херня меняет цвет всего, что находится ниже шапки:
+ background-color - бэкграунд (фон)
+ color - цвет шрифта
+
+ */
+
 body
 {
-    background-color:#000000;
+    background-color:#282828;
     color:#FFFFF0;
 }
 
+
+ /* ито шапка сайта (розовая\красная херь)
+  background-color - бэкграунд (фон)
+  margin-top - отступ от верха страницы
+  padding - расстояние от объектов внутри шапки до ее концов
+background-color:#466368;
+    background-color:linear-gradient(#648880, #293f50);
+  */
+
+
 .page-header {
-    background-color: #DC143C;
+
+    background-color:linear-gradient(45deg, blue, red);
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 10px 60px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+ /*
+ эта херь регулирует заголовки h1 со ссылкой (на которые можно кликнуть), которые находятся в шапке - то есть только Huck you
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта
+
+  */
+
+
+.page-header h1 a {
     margin-left: 40px;
     color: #FFFFF0;
     font-size: 36pt;
@@ -18,51 +45,118 @@ body
 }
 
 
-.content {
+ /*
+ эта херь регулирует заголовки h2, которые находятся в шапке сайта
+ (This is what you should say to people who don't believe you will become a programmer)
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта
 
+  */
+
+.page-header h2 {
     margin-left: 40px;
     color: #FFFFF0;
-    width: 2300px;
     font-size: 14pt;
+    text-decoration: none;
+}
+
+
+
+ /*
+ эта херь регулирует кнопки в шапке сайта
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта
+
+  */
+
+.container {
+    margin-left: 240px;
+    color: #FFFFF0;
+    font-size: 26pt;
+    text-decoration: none;
 
 }
+
+
+ /*
+ эта херь регулирует все заголовки на сайте (h1, h2, h3, h4)
+ color - цвет шрифта (можно убрать, если хочешь разные цвета у разных заголовков)
+font-family: шрифт, можешь выбрать любой другой здесь: https://fonts.google.com/ (не забудь тока в кавычки поставить)
+
+  */
 
 h1, h2, h3, h4 {
     font-family: 'Roboto';
     color: #FFFFF0;
+
 }
+
+ /*
+эта херь регулирует цвет даты каждого поста и размер шрифта
+  */
 
 .date {
     color: #828282;
+    font-size: 14pt;
+
 }
 
-.save {
-    float: right;
+ /*
+ эта херь регулирует все, что находится в теле сайта (вся темно-серая часть под шапкой)
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта (это шрифт всего, что не является заголовком)
+width - ширина страницы (из-за этой хери страница была огромной в ширину)
+  */
+
+.content {
+
+    margin-left: 40px;
+    color: #FFFFF0;
+    width: 1800px;
+    font-size: 16pt;
+    font-family: 'Roboto';
+
 }
 
-.post-form textarea, .post-form input {
-    width: 100%;
-}
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
+
+  /*
+  Эта херь регулирует страницу с каждым постом в отдельности (когда с главной кликаешь на название поста) +
+  расстояние между самим постами на главной странице
+
+   margin-bottom: расстояние от низа поста до конца страницы
+    color - цвет шрифта
+  */
 
 .post {
     margin-bottom: 70px;
     color: #FFFFF0;
 }
 
-.post h2 a, .post h2 a:visited {
+  /*
+  Эта херь регулирует все заголовки h2 и h2 a на странице с каждым постом в отдельности + на главной странице
+
+    color - цвет шрифта
+    font-size - размер
+  */
+
+
+.post h2, h2 a
+
+{
     color: #FFFFF0;
+    font-size: 24pt;
 }
 
+.text {
 
-.link { color: #FFFFF0; }
+    margin-left: 40px;
+    width: 1800px;
+    font-size: 16pt;
+    font-family: 'Roboto';
 
-.link:hover { color: #00FF00; } /* CSS link hover (green) */
+}
 
-.a { color: #FFFFF0; }
