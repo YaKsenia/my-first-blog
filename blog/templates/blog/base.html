@@ -3,22 +3,30 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Huck you</title>
+  <title>Huck you: learn programming from scratch</title>
 
 
 
 <style>
 
+ /* все что ниже шапки сайта */
 
 body {
-  background-color: #2e2e2e;
-  font-family: "Roboto", monospace;
+  background-color: #282828;
+  font-family: "Roboto";
+   /* background-color:#2e2e2e; */
+  color:#FFFFF0;
 }
 
 a {
   text-decoration: none;
-  color: #4e4e4e;
+  color: #FFFFF0;
+  /* 4e4e4e */
 }
+
+
+
+ /* ================================= начало всего что касается кнопок================================================= */
 
 .glitch-btn {
   display: inline-block;
@@ -26,7 +34,7 @@ a {
   top: 20%;
   left: 40%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
+  font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -36,7 +44,7 @@ a {
   top: 20%;
   left: 20%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
+  font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -46,7 +54,7 @@ a {
   top: 20%;
   left: 70%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
+  font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -202,39 +210,9 @@ a {
     transform: translate(-0.95px, -0.95px);
   }
 }
-.glitch-btn .mask {
-  position: absolute;
-  -webkit-backface-visibility: hidden;
-  height: 20%;
-  width: 100%;
-  overflow: hidden;
-  display: none;
-}
 
-.glitch-btn .mask span {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: 100%;
-  top: -100%;
-}
 
-.glitch-btn .mask {
-  top: 20%;
-}
 
-.glitch-btn:hover .mask {
-  animation: glitchin 0.2s both;
-}
-
-.glitch-btn:hover .text {
-  animation: fade-in 0.8s forwards;
-}
-
-.glitch-btn:hover .mask {
-  display: block;
-}
 
 @keyframes fade-in {
   from {
@@ -244,6 +222,11 @@ a {
     opacity: 1;
   }
 }
+
+
+
+ /* ================================= кончита всего что касается кнопок================================================= */
+
 
 .page-header {
 
@@ -255,7 +238,153 @@ a {
     background: -ms-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* W3C */
     margin-top: 0;
-    padding: 10px 10px 10px 60px;
+    padding: 10px 10px 80px 60px;
+
+}
+
+
+
+
+ /*
+ эта херь регулирует заголовки h1 со ссылкой (на которые можно кликнуть), которые находятся в шапке - то есть только Huck you
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта
+
+  */
+
+
+.page-header h1 a {
+    margin-left: 40px;
+    color: #FFFFF0;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+
+
+
+ /*
+ эта херь регулирует заголовки h2, которые находятся в шапке сайта
+ (This is what you should say to people who don't believe you will become a programmer)
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта
+
+  */
+
+.page-header h2 {
+    margin-left: 40px;
+    color: #FFFFF0;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+
+
+
+ /*
+ эта херь регулирует все заголовки на сайте (h1, h2)
+ color - цвет шрифта (можно убрать, если хочешь разные цвета у разных заголовков)
+font-family: шрифт, можешь выбрать любой другой здесь: https://fonts.google.com/ (не забудь тока в кавычки поставить)
+
+  */
+
+h1 a, h2 a {
+
+    font-family: 'Roboto';
+    color: #FFFFF0;
+    font-size: 24pt;
+
+}
+
+/*  текст каждого поста, который показывается на главной странице под каждым заголовком  */
+
+h3, h4 {
+
+    font-family: 'Roboto';
+    color: #FFFFF0;
+    font-size: 16pt;
+
+}
+
+ /*
+эта херь регулирует цвет даты каждого поста и размер шрифта
+  */
+
+.date {
+    color: #828282;
+    font-size: 14pt;
+
+}
+
+ /*
+ эта херь регулирует все, что находится в теле сайта (вся темно-серая часть под шапкой)
+ margin-left - отступ слева
+ color - цвет шрифта
+ font-size - размер шрифта (это шрифт всего, что не является заголовком)
+width - ширина страницы (из-за этой хери страница была огромной в ширину)
+
+  */
+
+.content {
+
+    margin-left: 40px;
+    color: #FFFFF0;
+    width: 1800px;
+    /*font-size: 16pt; */
+    font-family: 'Roboto';
+
+}
+
+
+
+  /*
+  Эта херь регулирует страницу с каждым постом в отдельности (когда с главной кликаешь на название поста) +
+  расстояние между самим постами на главной странице
+
+   margin-bottom: расстояние от низа поста до конца страницы
+    color - цвет шрифта
+  */
+
+.post {
+    margin-bottom: 70px;
+    color: #FFFFF0;
+}
+
+  /*
+  Эта херь регулирует все заголовки h2 и h2 a на странице с каждым постом в отдельности + на главной странице
+
+    color - цвет шрифта
+    font-size - размер
+  */
+
+
+.post h1, h1 a
+
+{
+    color: #FFFFF0;
+    font-size: 24pt;
+}
+
+
+.post h2, h2 a
+
+{
+    color: #FFFFF0;
+    font-size: 18pt;
+}
+
+.text {
+
+    margin-left: 40px;
+    width: 1800px;
+    font-size: 16pt;
+   /* font-family: 'Roboto'; */
+
+}
+
+
 }
 
 
@@ -267,15 +396,14 @@ a {
 <body>
 
   <a class="glitch-btn" href="theory" target="_blank">
-  <div class="text">Theory</div>
   <div class="mask">
-    <span>HUCK YOU</span>
+    <span>Theory</span>
     </div>
 
      </div></a>
 
 
-    <a class="glitch-btn2" href="practice" target="_blank">
+    <a class="glitch-btn2" href="practice" target="">
 
   <div class="mask">
     <span>Practice</span>
@@ -284,7 +412,7 @@ a {
      </div></a>
 
 
-    <a class="glitch-btn3" href="about" target="_blank">
+    <a class="glitch-btn3" href="about" target="">
 
   <div class="mask">
     <span>About</span>
