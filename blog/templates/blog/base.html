@@ -27,32 +27,32 @@ a {
 
 
  /* ================================= начало всего что касается кнопок================================================= */
-
+/*theory*/
 .glitch-btn {
   display: inline-block;
   position: absolute;
-  top: 20%;
-  left: 40%;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/*practice*/
 .glitch-btn2 {
   display: inline-block;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 20%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
+/*about*/
 .glitch-btn3 {
   display: inline-block;
   position: absolute;
-  top: 20%;
-  left: 70%;
+  top: 30%;
+  left: 80%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -230,15 +230,11 @@ a {
 
 .page-header {
 
-    background-color:linear-gradient(45deg, blue, red);
-    background: -moz-linear-gradient(top, rgba(0,47,75,0.5) 0%, rgba(220, 66, 37, 0.5) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(220, 66, 37, 0.5)), color-stop(100%,rgba(0,47,75,0.5))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0,47,75,0.5) 0%,rgba(220, 66, 37, 0.5) 100%); /* W3C */
+background: #780206;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin-top: 0;
-    padding: 10px 10px 80px 60px;
+    padding: 10px 10px 140px 60px;
 
 }
 
@@ -255,12 +251,15 @@ a {
 
 
 .page-header h1 a {
+    font-family: Arial Black;
     margin-left: 40px;
     color: #FFFFF0;
-    font-size: 36pt;
-    text-decoration: none;
+    font-size: 38pt;
+    color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
-
 
 
 
@@ -274,6 +273,7 @@ a {
   */
 
 .page-header h2 {
+    font-family: Palatino;
     margin-left: 40px;
     color: #FFFFF0;
     font-size: 14pt;
@@ -314,7 +314,7 @@ h3, h4 {
 
 .date {
     color: #828282;
-    font-size: 14pt;
+    font-size: 16pt;
 
 }
 
@@ -380,13 +380,10 @@ width - ширина страницы (из-за этой хери страни�
     margin-left: 40px;
     width: 1800px;
     font-size: 16pt;
+    font-family: 'Roboto';
    /* font-family: 'Roboto'; */
 
 }
-
-
-}
-
 
 
 </style>
