@@ -1,9 +1,7 @@
 {% extends 'blog/base.html' %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% load static %}
-<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
-<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-{{ form.media }}
+
 {% block content %}
     <div class="post">
         {% if post.published_date %}
@@ -11,12 +9,15 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
-        {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        {% endif %}
-        <h1><b>{{ post.title }}</b></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <p>{{ post.article|safe }}</p>
+
+
+        <h1>{{ post.title }}</h1>
+
+        <h2>{{ post.text|linebreaksbr }}</h2>
+
+        <div class="text">
+            {{ post.article|safe }}
+        </div>
 
 
 
