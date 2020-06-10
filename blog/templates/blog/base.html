@@ -18,11 +18,17 @@
  /* все что ниже шапки сайта */
 
 body {
-  background-color: #282828;
+  /*background-color: #282828; */
+  background: #780206;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-top: auto;
   font-family: "Verdana";
    /* background-color:#2e2e2e; */
   color:#FFFFF0;
   box-sizing: content-box;
+  max-width: 1000px;
+  margin: auto;
 }
 
 a {
@@ -39,6 +45,7 @@ a {
   display: inline-block;
   position: absolute;
   left: 50%;
+  top: 15%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -46,8 +53,9 @@ a {
 /*practice*/
 .glitch-btn2 {
   display: inline-block;
-  position: sticky;
+  position: absolute;
   left: 20%;
+  top: 15%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -57,6 +65,7 @@ a {
   display: inline-block;
   position: absolute;
   left: 80%;
+  top: 15%;
   transform: translate(-50%, -50%);
   font-size: 28px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -99,7 +108,7 @@ a {
   position: absolute;
   left: -10%;
   top: -10%;
-  background: #00ffb4;
+  background: #87CEFA;
   width: 4px;
   height: 120%;
   padding: 0px;
@@ -112,7 +121,7 @@ a {
   position: absolute;
   left: -10%;
   top: -10%;
-  background: #00ffb4;
+  background: #87CEFA;
   width: 4px;
   height: 120%;
   padding: 0px;
@@ -125,7 +134,7 @@ a {
   position: absolute;
   left: -10%;
   top: -10%;
-  background: #00ffb4;
+  background: #87CEFA;
   width: 4px;
   height: 120%;
   padding: 0px;
@@ -331,20 +340,20 @@ h3, h4 {
  font-size - размер шрифта (это шрифт всего, что не является заголовком)
 width - ширина страницы (из-за этой хери страница была огромной в ширину)
 
-  */
+
 
 .content {
 
     margin-left: 40px;
     color: #FFFFF0;
     width: 1800px;
-    /*font-size: 16pt; */
+    font-size: 16pt;
     font-family: 'Roboto';
     padding: 10px 10px 80px 60px;
 
 }
 
-
+ */
 
   /*
   Эта херь регулирует страницу с каждым постом в отдельности (когда с главной кликаешь на название поста) +
@@ -385,7 +394,9 @@ width - ширина страницы (из-за этой хери страни�
 .text {
 
     margin-left: 40px;
-    width: 1800px;
+    background-color: #282828;
+
+    margin: auto;
     font-size: 16pt;
    /* font-family: 'Roboto'; */
 
@@ -408,18 +419,18 @@ width - ширина страницы (из-за этой хери страни�
                 <h2>This is what you should say to people who don't believe you will become a programmer</h2>
 
 
-<div class='container'>
+    <div class='container'>
 
-<a class="glitch-btn" href="{% url 'theory'  %}" target="_self">Theory</a>
-
-
-<a class="glitch-btn2" href="{% url 'practice'  %}" target="_self">Practice</a>
+        <a class="glitch-btn" href="{% url 'theory'  %}" target="_self">Theory</a>
 
 
-<a class="glitch-btn3" href="{% url 'about'  %}" target="_self">About</a>
+        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self">Practice</a>
 
 
-</div>
+        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self">About</a>
+
+
+    </div>
 
 
 </div>
