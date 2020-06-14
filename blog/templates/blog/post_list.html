@@ -3,23 +3,67 @@
 
 
 
-
-
 {% block content %}
 
 
-<table style="width:100%">
+    <div class="row mb-2">
+
+    {% for post in posts %}
+
+    {% if forloop.counter == 1 %}
+
+      <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://images.unsplash.com/photo-1591269749143-07777e26591c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+    <div class="col-md-6 px-0">
+
+      <h1 class="display-4 font-italic"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+    </div>
+  </div>
+
+    {% elif forloop.counter == 2 or forloop.counter == 3 %}
+
+    <div class="col-md-6 px-1">
+        <div style="height: 500px">
+      <div class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-8 d-flex flex-column position-static">
+            <div class="background_image" style="background-image: url(https://images.unsplash.com/photo-1591269749143-07777e26591c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60); height: 400px">
+          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <h3 class="mb-24"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
 
 
-    <tr>
+          <div class="mb-1 text-muted">{{ post.published_date }}</div>
+
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+{% endif %}
+
+{% endfor %}
+
+
+</div>
+<table>
+        <tr>
     {% for post in posts %}
 
     {% if forloop.counter == 1 or forloop.counter == 2 %}
 
 
-        <td><div class="date">
+
+        <td>
+            <div class="date">
             {{ post.published_date }}
-        </div></td>
+        </div>
+        </td>
 
 
         {% else %}
@@ -31,13 +75,14 @@
     {% endfor %}
 
 
+
     <tr>
     {% for post in posts %}
 
     {% if forloop.counter == 1 or forloop.counter == 2 %}
 
 
-                    <th><p>{{ post.file|safe }}</p></th>
+                    <th>{{ post.file|safe }}</th>
 
 
 
@@ -96,6 +141,7 @@
         {% endif %}
 
     {% endfor %}
+
 </table>
 
 
