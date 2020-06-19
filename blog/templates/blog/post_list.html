@@ -12,30 +12,33 @@
 
     {% if forloop.counter == 1 %}
 
-      <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://images.unsplash.com/photo-1591269749143-07777e26591c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+    <div class="photo"  style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.unsplash.com/photo-1491693074421-dd59bb8273a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1572&q=80); height: 400px">
+
+
+
     <div class="col-md-6 px-0">
 
-      <h1 class="display-4 font-italic"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      <h1 class="display-4 font-italic ml-4 mt-4"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <p class="lead my-3 ml-4">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold ml-4">Continue reading...</a></p>
     </div>
   </div>
 
     {% elif forloop.counter == 2 or forloop.counter == 3 %}
 
-    <div class="col-md-6 px-1">
+    <div class="col-md-6 px-0">
         <div style="height: 500px">
       <div class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-8 d-flex flex-column position-static">
-            <div class="background_image" style="background-image: url(https://images.unsplash.com/photo-1591269749143-07777e26591c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60); height: 400px">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-24"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <div class="background_image" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(https://images.unsplash.com/photo-1491693074421-dd59bb8273a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1572&q=80); height: 400px">
+          <strong class="d-inline-block mb-2 text-primary ml-4 mt-4">World</strong>
+          <h3 class="mb-24 ml-4"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
 
 
-          <div class="mb-1 text-muted">{{ post.published_date }}</div>
+          <div class="mb-1 text-muted ml-4">{{ post.published_date }}</div>
 
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+          <p class="card-text mb-auto ml-4">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link ml-4">Continue reading</a>
         </div>
         </div>
 
