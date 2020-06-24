@@ -42,6 +42,7 @@ a {
  /* ================================= начало всего что касается кнопок================================================= */
 /*theory*/
 .glitch-btn {
+    font-family: 'Titillium Web', sans-serif;
   display: inline-block;
   position: absolute;
   left: 50%;
@@ -52,6 +53,7 @@ a {
 }
 /*practice*/
 .glitch-btn2 {
+    font-family: 'Titillium Web', sans-serif;
   display: inline-block;
   position: absolute;
   left: 20%;
@@ -62,6 +64,7 @@ a {
 }
 /*about*/
 .glitch-btn3 {
+    font-family: 'Titillium Web', sans-serif;
   display: inline-block;
   position: absolute;
   left: 80%;
@@ -266,14 +269,11 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 
 
 .page-header h1 a {
-    font-family: Arial Black;
+    font-family: 'Monoton', cursive;
     margin-left: 40px;
     color: #FFFFF0;
     font-size: 36pt;
-    color: transparent;
-	-webkit-background-clip: text;
- /*	убрала это, тк при проверке было сказано, что мы неверно используем (слово текст не является ключевым)-- background-clip: text;  */
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
 }
 
 
@@ -288,7 +288,7 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
   */
 
 .page-header h2 {
-    font-family: 'Palatino';
+    font-family: 'Mukta', sans-serif;
     margin-left: 40px;
     color: #FFFFF0;
     font-size: 14pt;
@@ -310,6 +310,7 @@ h1 a, h2 a {
     font-family: 'Verdana';
     color: #FFFFF0;
     font-size: 24pt;
+    text-decoration: none;
 
 }
 
@@ -320,6 +321,7 @@ h3, h4 {
     font-family: 'Verdana';
     color: #FFFFF0;
     font-size: 16pt;
+    text-decoration: none;
 
 }
 
@@ -382,6 +384,7 @@ width - ширина страницы (из-за этой хери страни�
 {
     color: #FFFFF0;
     font-size: 24pt;
+    text-decoration: none;
 }
 
 
@@ -390,6 +393,7 @@ width - ширина страницы (из-за этой хери страни�
 {
     color: #FFFFF0;
     font-size: 18pt;
+    text-decoration: none;
 }
 
 .text {
@@ -404,10 +408,13 @@ width - ширина страницы (из-за этой хери страни�
 }
 
 .photo{
-        display:table;
+    display:table;
     width:100%;
     background-position:center top;
     height:350px;
+    margin-bottom:24px;
+    margin-left:24px;
+    border-radius: 25px;
 }
 
 
@@ -416,25 +423,42 @@ width - ширина страницы (из-за этой хери страни�
 
 </head>
 
+
+
 <body>
 
 
 
 <div class="page-header">
 
-                <h1><a href="/"><b>Huck you</b></a></h1>
+                <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+
+                {% for post in posts %}
+
+                {% if forloop.counter == 3 %}
+
+                <a class="huckyou" href="/" target="_self">{{ post.file|safe }}</a>
+
+                {% endif %}
+
+                {% endfor %}
+
+
+
                 <h2>This is what you should say to people who don't believe you will become a programmer</h2>
 
 
     <div class='container'>
 
-        <a class="glitch-btn" href="{% url 'theory'  %}" target="_self">Theory</a>
+        <a class="glitch-btn" href="{% url 'theory'  %}" target="_self">THEORY</a>
 
 
-        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self">Practice</a>
+        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self">PRACTICE</a>
 
 
-        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self">About</a>
+        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self">ABOUT</a>
 
 
     </div>
