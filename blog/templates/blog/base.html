@@ -306,22 +306,27 @@ font-family: шрифт, можешь выбрать любой другой з�
   */
 
 h1 a, h2 a {
-
-    font-family: 'Verdana';
+    text-decoration: none;
+    font-family: 'Mukta', sans-serif;
+    font: 'italic';
     color: #FFFFF0;
     font-size: 24pt;
-    text-decoration: none;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display:  flex;
 
 }
 
 /*  текст каждого поста, который показывается на главной странице под каждым заголовком  */
 
 h3, h4 {
-
-    font-family: 'Verdana';
+    font-family: 'Mukta', sans-serif;
     color: #FFFFF0;
     font-size: 16pt;
     text-decoration: none;
+    margin-left: 50px;
+    display:  flex;
 
 }
 
@@ -366,6 +371,7 @@ width - ширина страницы (из-за этой хери страни�
   */
 
 .post {
+    font-family: 'Mukta', sans-serif;
     background-color: #282828;
     margin-bottom: 70px;
     color: #FFFFF0;
@@ -382,6 +388,7 @@ width - ширина страницы (из-за этой хери страни�
 .post h1, h1 a
 
 {
+    font-family: 'Mukta', sans-serif;
     color: #FFFFF0;
     font-size: 24pt;
     text-decoration: none;
@@ -391,16 +398,15 @@ width - ширина страницы (из-за этой хери страни�
 .post h2, h2 a
 
 {
+    font-family: 'Mukta', sans-serif;
     color: #FFFFF0;
     font-size: 18pt;
     text-decoration: none;
 }
 
 .text {
-
+    font-family: 'Mukta', sans-serif;
     margin-left: 40px;
-    background-color: #282828;
-
     margin: auto;
     font-size: 16pt;
    /* font-family: 'Roboto'; */
@@ -408,14 +414,20 @@ width - ширина страницы (из-за этой хери страни�
 }
 
 .photo{
+
     display:table;
     width:100%;
     background-position:center top;
     height:350px;
     margin-bottom:24px;
     margin-left:24px;
-    border-radius: 25px;
 }
+
+div {
+border-radius:20px;
+}
+
+
 
 
 
@@ -435,15 +447,9 @@ width - ширина страницы (из-за этой хери страни�
                 <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
                 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
 
-                {% for post in posts %}
+                <a href="/"> <img src='http://yksenia.pythonanywhere.com/media/uploads/2020/06/24/huck_oT8K6EV.png'></a>
 
-                {% if forloop.counter == 3 %}
 
-                <a class="huckyou" href="/" target="_self">{{ post.file|safe }}</a>
-
-                {% endif %}
-
-                {% endfor %}
 
 
 
