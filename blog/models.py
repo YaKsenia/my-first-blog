@@ -5,6 +5,8 @@ from mysite.settings import MEDIA_URL
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from slugify import slugify
+from django_resized import ResizedImageField
+
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -67,6 +69,11 @@ def get_image_filename(instance, filename):
 
 class Images(models.Model):
     post = models.ForeignKey(HuckYou, default=None, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to=get_image_filename,
-                              verbose_name='Image')
-    slug = models.SlugField()
+    image = ResizedImageField(size=[600, 400], upload_to=get_image_filename, blank=True, null=True)
+    #image = models.ImageField(upload_to=get_image_filename,
+     #                         verbose_name='Image')
+
+
+
+
+
