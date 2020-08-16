@@ -4,6 +4,7 @@ from django.utils import timezone
 from mysite.settings import MEDIA_URL
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from slugify import slugify
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -68,3 +69,4 @@ class Images(models.Model):
     post = models.ForeignKey(HuckYou, default=None, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to=get_image_filename,
                               verbose_name='Image')
+    slug = models.SlugField()
