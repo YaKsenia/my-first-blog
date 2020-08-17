@@ -11,8 +11,8 @@ from django.views.generic import ListView
 from .models import Post
 from .models import Images
 from django.template import RequestContext
-
 from django.shortcuts import render_to_response
+#from tabination.views import TabView
 
 '''
 class HomePageView(ListView):
@@ -36,15 +36,46 @@ class AraPageView(ListView):
 
 def post_list(request):
     posts = HuckYou.objects.order_by('published_date')
+    images = Images.objects.order_by('image')
+    #.filter(author=request.user, published_date__lte=timezone.now())
+   # HuckYou.objects.all()
+    #Post.objects.get(pk=pk)
+    return render(request, 'blog/post_list.html', {'posts': posts, 'images' : images})
+
+
+def post_images(request, slug):
+    image = get_object_or_404(Images, slug = slug)
+    return render(request, 'blog/post_images.html', {'image': image})
+
+
+
+def practice(request):
+    posts = HuckYou.objects.order_by('published_date')
     #.filter(author=request.user, published_date__lte=timezone.now())
     HuckYou.objects.all()
     #Post.objects.get(pk=pk)
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/practice.html', {'posts': posts})
+
+
+def theory(request):
+    posts = HuckYou.objects.order_by('published_date')
+    #.filter(author=request.user, published_date__lte=timezone.now())
+    HuckYou.objects.all()
+    #Post.objects.get(pk=pk)
+    return render(request, 'blog/theory.html', {'posts': posts})
+
+def about(request):
+    posts = HuckYou.objects.order_by('published_date')
+    #.filter(author=request.user, published_date__lte=timezone.now())
+    HuckYou.objects.all()
+    #Post.objects.get(pk=pk)
+    return render(request, 'blog/about.html', {'posts': posts})
 
 
 def post_detail(request, pk):
     post = get_object_or_404(HuckYou, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    posts = HuckYou.objects.order_by('published_date')
+    return render(request, 'blog/post_detail.html', {'post': post, 'posts': posts})
 
 
 def post_new(request):
@@ -86,7 +117,46 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
 '''
+
+class MainNavigationBaseTab(TabView):
+    """Base class for all main navigation tabs."""
+    tab_group = 'main_navigation'
+    tab_classes = ['main-navigation-tab']
+
+    def get_context_data(self, **kwargs):
+        context = super(MainNavigationBaseTab, self).get_context_data(**kwargs)
+        context['theory'] = 'theory'
+        return context
+
+    @property
+    def tab_classes(self):
+        """If user is logged in, set ``logged_in_only`` class."""
+        classes = super(MainNavigationBaseTab, self).tab_classes[:]
+        if self.current_tab.request.user.is_authenticated():
+            classes += ['logged_in_only']
+        return classes
+
+class TheoryTab(MainNavigationBaseTab):
+    _is_tab = True
+    tab_id = 'theory'
+    tab_group = 'main_navigation'
+    tab_label = 'Theory'
+    template_name = 'blog/post_list.html'
+
+
+
+class PracticeTab(MainNavigationBaseTab):
+    _is_tab = True
+    tab_id = 'practice'
+    tab_group = 'main_navigation'
+    tab_label = 'Practice'
+    template_name = 'blog/tabs.html'
+
+
+
+
 
 # post=HuckYou.objects.get(pk=post.pk),
 

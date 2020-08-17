@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <h1>Just try it out</h1>
+
+    <h3>Check out these examples and try to code them yourself. And remember: every error is a step towards the solution.</h3>
+
+    <br>
+    {% for post in posts %}
+        {% if post.label == "practice" %}
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+
+
+                <p>{{ post.text|linebreaksbr }}</p>
+                <p>{{ post.file|safe }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

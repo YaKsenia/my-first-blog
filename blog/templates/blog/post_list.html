@@ -38,9 +38,9 @@
 
     <div class="col-md-6 px-0">
 
-      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none;">{{ post.title }}</a></h1>
       <h3>Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</h3>
-      <h3><b><a href="{% url 'post_detail' pk=post.pk %}">Continue reading...</a></b></h3>
+
 
     </div>
     </div>
@@ -66,13 +66,12 @@
             {% endfor %}
 
           <strong class="d-inline-block mb-2 text-primary ml-4 mt-4">{{ post.label }}</strong>
-          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none;">{{ post.title }}</a></h1>
 
 
           <div class="mb-1 text-muted ml-4">{{ post.published_date }}</div>
 
           <h3>This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
-          <h3><a href="{% url 'post_detail' pk=post.pk %}">Continue reading</a></h3>
         </div>
         </div>
 
@@ -103,13 +102,13 @@
      {% endfor %}
 
           <strong class="d-inline-block mb-2 text-primary ml-4 mt-4">{{ post.label }}</strong>
-          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none;">{{ post.title }}</a></h1>
 
 
           <div class="mb-1 text-muted ml-4">{{ post.published_date }}</div>
 
           <h3>This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
-          <h3><a href="{% url 'post_detail' pk=post.pk %}">Continue reading</a></h3>
+
         </div>
         </div>
 
@@ -217,11 +216,6 @@
     {% endfor %}
 
 </table>
-    {% for im in images %}
 
-    <img src=" {{ im.image.url }}" alt="Huck"/>
-
-
-    {% endfor %}
 
 {% endblock %}
