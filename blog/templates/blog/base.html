@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Huck you: learn programming from scratch</title>
+  <title>Huck you: learn coding from scratch</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
 
 
@@ -32,8 +32,8 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 }
 
 a {
-  text-decoration: none;
-  color: #FFFFF0;
+  text-decoration:none;
+  /*color: #FFFFF0;*/
   /* 4e4e4e */
 }
 
@@ -269,6 +269,8 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 
 
 .page-header h1 a {
+    text-decoration:none;
+
     font-family: 'Monoton', cursive;
     margin-left: 40px;
     color: #FFFFF0;
@@ -306,7 +308,7 @@ font-family: шрифт, можешь выбрать любой другой з�
   */
 
 h1 a, h2 a {
-    text-decoration: none;
+    text-decoration:none;
     font-family: 'Mukta', sans-serif;
     font: 'italic';
     color: #FFFFF0;
@@ -324,7 +326,7 @@ h3, h4 {
     font-family: 'Mukta', sans-serif;
     color: #FFFFF0;
     font-size: 16pt;
-    text-decoration: none;
+    text-decoration:none;
     margin-left: 50px;
     display:  flex;
 
@@ -458,13 +460,13 @@ border-radius:20px;
 
     <div class='container'>
 
-        <a class="glitch-btn" href="{% url 'theory'  %}" target="_self">THEORY</a>
+        <a class="glitch-btn" href="{% url 'theory'  %}" target="_self" style="text-decoration:none;">THEORY</a>
 
 
-        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self">PRACTICE</a>
+        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self" style="text-decoration:none;">PRACTICE</a>
 
 
-        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self">ABOUT</a>
+        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self" style="text-decoration:none;">ABOUT</a>
 
 
     </div>
