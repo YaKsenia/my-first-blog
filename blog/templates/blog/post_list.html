@@ -125,81 +125,6 @@
 
 
 </div>
-<table>
-        <tr>
-    {% for post in posts %}
-
-    {% if forloop.counter == 1 or forloop.counter == 2 %}
-
-
-
-        <td>
-            <div class="date">
-            {{ post.published_date }}
-        </div>
-        </td>
-
-
-        {% else %}
-
-        </tr>
-
-        {% endif %}
-
-    {% endfor %}
-
-
-
-    <tr>
-    {% for post in posts %}
-
-    {% if forloop.counter == 1 or forloop.counter == 2 %}
-
-
-                    <th>{{ post.file|safe }}</th>
-
-
-
-        {% else %}
-
-        </tr>
-
-        {% endif %}
-
-    {% endfor %}
-
-    <tr>
-    {% for post in posts %}
-
-
-
-        {% if forloop.counter == 1 or forloop.counter == 2 %}
-
-         <td><h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1></td>
-
-
-
-
-
-
-        {% else %}
-
-        </tr>
-
-        {% endif %}
-
-    {% endfor %}
-
-
-    <tr>
-    {% for post in posts %}
-
-
-
-        {% if forloop.counter == 1 or forloop.counter == 2 %}
-
-
-                    <td><h4>{{ post.text|linebreaksbr }}</h4></td>
 
 
 
@@ -207,15 +132,7 @@
 
 
 
-        {% else %}
 
-        </tr>
-
-        {% endif %}
-
-    {% endfor %}
-
-</table>
 
 
 {% endblock %}
