@@ -43,35 +43,53 @@ a {
 /*theory*/
 .glitch-btn {
     font-family: 'Titillium Web', sans-serif;
-  display: inline-block;
-  position: absolute;
+    display: inline-block;
+
+  /*
   left: 50%;
   top: 15%;
+  margin-left: 80px; */
+  position: static;
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 18px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-left: 40px;
+  margin-top: 20px;
+    color: #FFFFF0;
+  text-shadow: 1px 0 1px #ED3CCA, /* контурок */
+    0 1px 1px #ED3CCA,
+    -1px 0 1px #ED3CCA,
+    0 -1px 1px #ED3CCA;/* контурок */
+
 }
-/*practice*/
+
+/*practice
+position absolute*/
 .glitch-btn2 {
-    font-family: 'Titillium Web', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   display: inline-block;
-  position: absolute;
-  left: 20%;
-  top: 15%;
+  position: static;
+ /* left: 20%;
+  top: 15%;*/
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 18px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-left: 80px;
+  margin-top: 20px;
 }
+
 /*about*/
 .glitch-btn3 {
     font-family: 'Titillium Web', sans-serif;
   display: inline-block;
-  position: absolute;
-  left: 80%;
-  top: 15%;
+  position: static;
+ /* left: 80%;
+  top: 15%;*/
   transform: translate(-50%, -50%);
-  font-size: 28px;
+  font-size: 18px;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 
@@ -249,10 +267,10 @@ a {
 background: #780206;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    margin-top: auto;
+margin-top: auto;
+padding: 10px 10px 80px 60px;
+box-sizing: content-box;
 
-  padding: 10px 10px 80px 60px;
-   box-sizing: content-box;
 
 }
 
@@ -292,7 +310,12 @@ background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, F
 .page-header h2 {
     font-family: 'Mukta', sans-serif;
     margin-left: 40px;
+    margin-top: 20px;
     color: #FFFFF0;
+    text-shadow: 1px 0 1px #ED3CCA, /* контурок */
+    0 1px 1px #ED3CCA,
+    -1px 0 1px #ED3CCA,
+    0 -1px 1px #ED3CCA;/* контурок */
     font-size: 14pt;
     text-decoration: none;
 }
@@ -310,10 +333,11 @@ font-family: шрифт, можешь выбрать любой другой з�
 h1 a, h2 a {
     text-decoration:none;
     font-family: 'Mukta', sans-serif;
-    font: 'italic';
+   /* font: 'italic'; -- not a font value */
     color: #FFFFF0;
     font-size: 24pt;
     margin-left: 50px;
+    margin-right: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
     display:  flex;
@@ -328,6 +352,7 @@ h3, h4 {
     font-size: 16pt;
     text-decoration:none;
     margin-left: 50px;
+    margin-right: 50px;
     display:  flex;
 
 }
@@ -423,6 +448,7 @@ width - ширина страницы (из-за этой хери страни�
     height:350px;
     margin-bottom:24px;
     margin-left:24px;
+    margin-right:20px;
 }
 
 div {
@@ -460,19 +486,45 @@ border-radius:20px;
 
     <div class='container'>
 
+<div class="row">
+
+      <div class="row">
+        <div class="col p-2 d-flex flex-column position-static">
+
+
         <a class="glitch-btn" href="{% url 'theory'  %}" target="_self" style="text-decoration:none;">THEORY</a>
 
-
-        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self" style="text-decoration:none;">PRACTICE</a>
-
-
-        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self" style="text-decoration:none;">ABOUT</a>
-
-
+      </div>
     </div>
 
 
-</div>
+
+
+
+
+                <div class="row">
+        <div class="col p-2 d-flex flex-column position-static">
+
+        <a class="glitch-btn2" href="{% url 'practice'  %}" target="_self" style="text-decoration:none;">PRACTICE</a>
+
+        </div>
+ </div>
+
+
+
+
+
+          <div class="row">
+
+        <div class="col p-2 d-flex flex-column position-static">
+
+        <a class="glitch-btn3" href="{% url 'about'  %}" target="_self" style="text-decoration:none;">ABOUT</a>
+    </div>
+    </div>
+     </div>
+    </div>
+    </div>
+
 
 
 
