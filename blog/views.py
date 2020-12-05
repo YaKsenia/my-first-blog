@@ -51,18 +51,20 @@ def post_images(request, slug):
 
 def practice(request):
     posts = HuckYou.objects.order_by('published_date')
+    images = Images.objects.order_by('image')
     #.filter(author=request.user, published_date__lte=timezone.now())
-    HuckYou.objects.all()
+   # HuckYou.objects.all()
     #Post.objects.get(pk=pk)
-    return render(request, 'blog/practice.html', {'posts': posts})
+    return render(request, 'blog/practice.html', {'posts': posts, 'images' : images})
 
 
 def theory(request):
-    posts = HuckYou.objects.order_by('published_date')
+    theory_posts = HuckYou.objects.filter(label='theory').order_by('published_date')
+    images = Images.objects.order_by('image')
     #.filter(author=request.user, published_date__lte=timezone.now())
-    HuckYou.objects.all()
+   # HuckYou.objects.all()
     #Post.objects.get(pk=pk)
-    return render(request, 'blog/theory.html', {'posts': posts})
+    return render(request, 'blog/theory.html', {'theory_posts': theory_posts, 'images' : images})
 
 def about(request):
     posts = HuckYou.objects.order_by('published_date')
