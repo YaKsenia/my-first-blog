@@ -2,15 +2,21 @@
 
 {% load static %}
 
+
+
+
+
 {% block content %}
 
-    <div class="theory">
-        <h1>Pure logic</h1>
 
 
-        <h3>Programming concepts are super easy to understand: they are based on a simple logic. So never ever believe those nerds who tell you: "This programming stuff is too complicated for you, you will not understand". You will, we promise. Just go through these articles and see how hucking simple it is.</h3>
+    <div class="row mb-2">
+
+
 
     {% for post in theory_posts %}
+
+
 
 
 
@@ -88,14 +94,21 @@
 
 
 
-
-
 {% endif %}
 
 
 {% endfor %}
 
 
+</div>
 
-    </div>
+
+
+
+
+
+
+
+
+
 {% endblock %}
