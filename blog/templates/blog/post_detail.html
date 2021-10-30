@@ -1,17 +1,23 @@
 {% extends 'blog/base.html' %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+{% load hitcount_tags %}
+
+
 
 {% block content %}
     <div class="post">
         {% if post.published_date %}
             <div class="date">
                 {{ post.published_date }}
+                <p>Views: {{ hitcount.total_hits }}</p>
             </div>
         {% endif %}
 
 
         <h1>{{ post.title }}</h1>
+
+
 
         <h2>{{ post.text|linebreaksbr }}</h2>
 
