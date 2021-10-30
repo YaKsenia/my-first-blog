@@ -1,15 +1,10 @@
 from django.urls import path
 from . import views
 from django.conf.urls import include, url
-
-
-
-
-# posts/urls.py
-
-#from .views import HomePageView
+from django.views.generic.base import TemplateView
 from .views import MurichPageView
 from .views import AraPageView
+from .views import PostDetailView
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
@@ -19,12 +14,15 @@ urlpatterns = [
     path('practice', views.practice, name='practice'),
     path('theory', views.theory, name='theory'),
     path('about', views.about, name='about'),
-    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
+   # path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post_images/<int:pk>/', views.post_images, name='post_images'),
     path('post_images/<slug:slug>/', views.post_images, name='post_images'),
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^editor/$', TemplateView.as_view(template_name="editor.html"), name='editor'),
+
 
 ]
 
