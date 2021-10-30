@@ -6,6 +6,11 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from slugify import slugify
 from django_resized import ResizedImageField
+from hitcount.models import HitCountMixin, HitCount
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCountMixin
+
+
 
 
 class Post(models.Model):
@@ -42,7 +47,7 @@ class Murich(models.Model):
 
 
 
-class HuckYou(models.Model):
+class HuckYou(models.Model, HitCountMixin):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     article = RichTextField(blank=True, null=True)
     file =  RichTextUploadingField(blank=True, null=True)
@@ -51,6 +56,10 @@ class HuckYou(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     label = models.CharField(max_length=20)
+    hit_count_generic = GenericRelation(
+        HitCount, object_id_field='object_pk',
+        related_query_name='hit_count_generic_relation')
+
 
     def publish(self):
         self.published_date = timezone.now()
