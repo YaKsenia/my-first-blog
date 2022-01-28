@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from djangocodemirror.settings import *
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,8 +43,11 @@ INSTALLED_APPS = [
     'django_wysiwyg',
     'ckeditor',
     'ckeditor_uploader',
-]
+    'djangocodemirror',
+    'hitcount',
 
+
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -144,12 +150,20 @@ TEMPLATE_DIRS = (
 DJANGO_WYSIWYG_FLAVOR = "ckeditor"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-
+#        'toolbar': 'full',
 CKEDITOR_CONFIGS = {
     'default': {
         # 'toolbar': 'Custom',
         'width': '1000px',
         'height': 'auto',
+        'toolbar': 'full',
+        'extraPlugins': ','.join(
+          [
+              'codesnippet',
+          ]
+
+      ),
+      'codeSnippet_theme': 'monokai_sublime',
         # 'toolbar_Custom': [
         #     ['Bold', 'Italic', 'Underline'],
         #     ['NumberedList', 'BulletedList'],
