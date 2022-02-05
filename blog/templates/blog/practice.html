@@ -1,25 +1,114 @@
 {% extends 'blog/base.html' %}
 
+{% load static %}
+
+
+
+
+
 {% block content %}
 
-    <h1>Just try it out</h1>
-
-    <h3>Check out these examples and try to code them yourself. And remember: every error is a step towards the solution.</h3>
-
-    <br>
-    {% for post in posts %}
-        {% if post.label == "practice" %}
-            <div class="post">
-                <div class="date">
-                    {{ post.published_date }}
-                </div>
-
-                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 
 
-                <p>{{ post.text|linebreaksbr }}</p>
-                <p>{{ post.file|safe }}</p>
-            </div>
-        {% endif %}
-    {% endfor %}
+    <div class="row mb-2">
+
+
+
+    {% for post in practice_posts %}
+
+
+
+
+
+
+    {% if forloop.counter|divisibleby:"2" == 0   %}
+
+
+
+    <div class="col-md-6 px-0">
+        <div style="height: 500px">
+      <div class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-8 d-flex flex-column position-static">
+
+
+            {% for im in images %}
+
+            {% if im.post == post %}
+
+            <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/{{ im.image.url }} ); height: 400px">
+
+                {% endif %}
+
+            {% endfor %}
+
+          <strong class="d-inline-block mb-2 text-primary ml-4 mt-4">{{ post.label }}</strong>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none;">{{ post.title }}</a></h1>
+
+
+          <div class="mb-1 text-muted ml-4">{{ post.published_date }}</div>
+
+          <h3>This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
+        </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    {% else %}
+
+
+    {% for im in images %}
+
+
+    {% if im.post == post %}
+
+
+
+        <div class="col-md-6 px-0">
+        <div style="height: 500px">
+      <div class="row no-gutters overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-8 d-flex flex-column position-static">
+            <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/{{ im.image.url }} ); height: 400px">
+
+     {% endif %}
+
+     {% endfor %}
+
+          <strong class="d-inline-block mb-2 text-primary ml-4 mt-4">{{ post.label }}</strong>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}" style="text-decoration:none;">{{ post.title }}</a></h1>
+
+
+          <div class="mb-1 text-muted ml-4">{{ post.published_date }}</div>
+
+          <h3>This is a wider card with supporting text below as a natural lead-in to additional content.</h3>
+
+        </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+{% endif %}
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

@@ -22,9 +22,12 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^editor/$', TemplateView.as_view(template_name="editor.html"), name='editor'),
+    path("register", views.register_request, name="register"),
+    path("login", views.login_request, name="login"),
 
 
 ]
+
 
 
 '''

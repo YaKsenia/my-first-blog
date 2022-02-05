@@ -8,7 +8,7 @@ from slugify import slugify
 from django_resized import ResizedImageField
 from hitcount.models import HitCountMixin, HitCount
 from django.contrib.contenttypes.fields import GenericRelation
-from hitcount.models import HitCountMixin
+
 
 
 
@@ -21,6 +21,8 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to=MEDIA_URL)
     audio_file = models.FileField(blank=True)
+    article = RichTextField(blank=True, null=True)
+    file =  RichTextUploadingField(blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -59,6 +61,7 @@ class HuckYou(models.Model, HitCountMixin):
     hit_count_generic = GenericRelation(
         HitCount, object_id_field='object_pk',
         related_query_name='hit_count_generic_relation')
+
 
 
     def publish(self):

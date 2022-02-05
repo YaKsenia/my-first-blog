@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'djangocodemirror',
     'hitcount',
+    'crispy_forms',
 
 
 ]

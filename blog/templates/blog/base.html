@@ -557,6 +557,14 @@ width - ширина страницы (из-за этой хери страни�
     margin-right:20px;
 }
 
+.messages {
+    color: #006400;
+    font-size: 24pt;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 
 
 div {
@@ -664,6 +672,14 @@ border-radius:20px;
 
 
 
+
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <b><li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></b>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
 
 
 
