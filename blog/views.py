@@ -8,7 +8,6 @@ from django.views.generic import ListView
 from .models import Post
 from .models import Images
 from hitcount.views import HitCountDetailView
-from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth import login, authenticate #add this
 from django.contrib.auth.forms import AuthenticationForm #add this
@@ -76,13 +75,15 @@ def about(request):
     return render(request, 'blog/about.html', {'posts': posts})
 
 '''
+
 def post_detail(request, pk):
     post = get_object_or_404(HuckYou, pk=pk)
+   # image = get_object_or_404(Images, pk=pk)
     posts = HuckYou.objects.order_by('published_date')
+    #images = Images.objects.order_by('image')
     return render(request, 'blog/post_detail.html', {'post': post, 'posts': posts})
+
 '''
-
-
 class PostDetailView(HitCountDetailView):
     model = HuckYou
     template_name = 'blog/post_detail.html'
@@ -91,11 +92,13 @@ class PostDetailView(HitCountDetailView):
     count_hit = True
 
     def get_context_data(self, **kwargs):
-        context = super(PostDetailView, self).get_context_data(**kwargs)
-        context.update({
-        'popular_posts': HuckYou.objects.order_by('-hit_count_generic__hits')[:3],
-        })
-        return context
+
+       context = super(PostDetailView, self).get_context_data(**kwargs)
+       context.update({
+       'popular_posts': HuckYou.objects.order_by('-hit_count_generic__hits')[:3],
+       })
+       return context
+
 
 
 

@@ -6,6 +6,7 @@
 
 
 {% block content %}
+
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -14,8 +15,19 @@
             </div>
         {% endif %}
 
+<h1>{{ post.title }}</h1>
 
-        <h1>{{ post.title }}</h1>
+{% for image in post.images.all %}
+
+<!-- <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/media/{{ image.image }} ); height: 250px"> -->
+
+ <img src="http://yksenia.pythonanywhere.com/media/{{ image.image }} " alt="" width="auto" height="540"/>
+
+{% endfor %}
+
+
+
+
 
 
 

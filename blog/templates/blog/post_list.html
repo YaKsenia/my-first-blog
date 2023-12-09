@@ -9,6 +9,23 @@
 {% block content %}
 
 
+<div class="row mb-2">
+
+
+     <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/media/post_images/what-is-a-programming-language-nicole-wolf--xTBn1YBrTE-unsplash.jpeg); height: 350px">
+
+
+
+    <div class="col-md-10 px-0">
+
+      <h1>We offer you to study programming for free. Join us:  </h1>
+
+       <h3>- I am a complete beginner<a href="http://yksenia.pythonanywhere.com/post/17/"> - click here --> </a>   </h3>
+       <h3>- I already know something and want to practice -->  </h3>
+
+    </div>
+    </div>
+    </div>
 
     <div class="row mb-2">
 
@@ -30,7 +47,7 @@
 
     {% if im.post == post %}
 
-     <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/{{ im.image.url }} ); height: 400px">
+     <div class="photo" style="background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://yksenia.pythonanywhere.com/{{ im.image.url }} ); height: 250px">
 
      {% endif %}
 
@@ -118,6 +135,7 @@
 
 
 
+
 {% endif %}
 
 
@@ -125,6 +143,7 @@
 
 
 </div>
+
 
 
 

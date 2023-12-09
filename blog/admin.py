@@ -4,10 +4,6 @@ from .models import Murich
 from .models import HuckYou
 from .models import Images
 
-from django.contrib import admin
-from blog.models import HuckYou
-
-
 class AuthorAdmin(admin.ModelAdmin):
     change_form_template = 'blog/admin/change_form.html'
 

@@ -64,6 +64,10 @@ class HuckYou(models.Model, HitCountMixin):
 
 
 
+    def first_image(self):
+        # code to determine which image to show. The First in this case.
+        return self.images
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
@@ -81,11 +85,16 @@ def get_image_filename(instance, filename):
 
 class Images(models.Model):
     post = models.ForeignKey(HuckYou, default=None, on_delete=models.CASCADE, related_name='images')
-    image = ResizedImageField(size=[600, 400], upload_to=get_image_filename, blank=True, null=True)
+    image = ResizedImageField(size=[1200, 800], upload_to=get_image_filename, blank=True, null=True)
     #image = models.ImageField(upload_to=get_image_filename,
      #                         verbose_name='Image')
 
 
+   # def publish(self):
+    #    self.published_date = timezone.now()
+    #    self.save()
 
+    #def __str__(self):
+    #    return self.title
 
 
